@@ -1,0 +1,81 @@
+/*Simon Martin*/
+body {
+  	background-color: lightblue;
+	border: 5px solid black;
+  	padding: 30px;
+	margin: 5px;
+}
+
+h1 {
+	font-family: courier;
+	font-size: 60px;
+	color: orange;
+	/*the display: inline code allows the background to wrap the text*/
+	display: inline;
+	background-color: black;
+}
+
+p {
+	font-family: verdana;
+  	font-size: 20px;
+}
+
+button {
+	margin-bottom: 20px;
+}
+
+h3 {
+	font-size: 25px;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+/*this is the text next to the widget that changes the month*/
+.months-text {
+	font-size: 25px;
+	padding-right: 7px;
+	float: left;
+}
+
+/*this is for the widget that changes the month*/
+.dropwidget {
+  background-color: lightblue;
+  color: black;
+  border: 1px solid black;
+  width: 45px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/*this is used to position the dropdown right below the widget*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/*this is the actual dropdown and it's attributes*/
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: lightblue;
+  min-width: 100px;
+  height: 100px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/*this is the content in the dropdown (ie. months)*/
+.dropdown-content {
+  color: black;
+  padding-left: 7px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+}
+
+/*when you hover over one of the months it turns grey*/
+.dropdown-content:hover {background-color: #ddd;}
+
+/*when you hover over the dropdown the dropdown-menu is displayed*/
+.dropdown:hover .dropdown-menu {display: block;}

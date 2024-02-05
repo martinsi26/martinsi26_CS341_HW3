@@ -1,0 +1,72 @@
+<!-- Simon Martin -->
+<html>
+	<head>
+		<title>Page Title</title>
+		<link rel="stylesheet" href="stylesheets/martinsi26.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/></script>
+		<script src="javascripts/index.js"></script>
+	</head>
+    
+	<body>
+		<h1 id="orderForm">Cheesecake Order Form</h1>
+		<br>
+        	<!-- This is a different cheescake image since the one from the assignment has a broken link -->
+		<img src="https://i.pinimg.com/736x/09/0b/a0/090ba079e3ac8d4951a3bc3a94de227b.jpg" width="180" height="240">
+		<p id="toppings">Quantity Topping</p>
+        <!-- This is a table for formatting the selection drop down and the input dots in the right way -->
+        <table>
+  			<tr>
+        		<td>
+        			<select name="numbers" id="numbers">
+    					<option value="1">1</option>
+    					<option value="2">2</option>
+    					<option value="3">3</option>
+					</select>
+       			<td>
+        		<td>
+        			<input type="radio" id="plain" name="topping"><label for="plain"> Plain</label>
+					<br>
+					<input type="radio" id="cherry" name="topping"><label for="cherry"> Cherry</label>
+					<br>
+					<input type="radio" id="myrad3" name="topping"><label for="myrad3"> Chocolate</label>
+        		</td>
+        	</tr>
+        </table>
+		<p id="notes">Notes:</p>
+        	<!-- This is a textarea with a placeholder -->
+		<textarea id="notesBox" rows="4" cols="50" placeholder="Enter any special instructions here."></textarea>
+        	<!-- I added two breaks to increase the gap to better match the style -->
+		<br>
+		<br>
+		<button id="orderButton">Order</button>
+		<br>
+		<div class="months-text">Orders for </div>
+		<!-- This div is for my dropdown -->
+		<div class="dropdown">
+			<!-- This div is for my widget for changing the month -->
+			<div id="month" class="dropwidget">Jan</div>
+			<!-- This div holds all of the different months -->
+			<div class="dropdown-menu">
+				<!-- These are the divs for each month -->
+				<div id="Jan" class="dropdown-content" onclick="monthFunction(this.id)" >Jan</div>
+				<div id="Feb" class="dropdown-content" onclick="monthFunction(this.id)">Feb</div>
+				<div id="Mar" class="dropdown-content" onclick="monthFunction(this.id)">Mar</div>
+				<div id="Apr" class="dropdown-content" onclick="monthFunction(this.id)">Apr</div>
+				<div id="May" class="dropdown-content" onclick="monthFunction(this.id)">May</div>
+				<div id="Jun" class="dropdown-content" onclick="monthFunction(this.id)">Jun</div>
+				<div id="Jul" class="dropdown-content" onclick="monthFunction(this.id)">Jul</div>
+				<div id="Aug" class="dropdown-content" onclick="monthFunction(this.id)">Aug</div>
+				<div id="Sep" class="dropdown-content" onclick="monthFunction(this.id)">Sep</div>
+				<div id="Oct" class="dropdown-content" onclick="monthFunction(this.id)">Oct</div>
+				<div id="Nov" class="dropdown-content" onclick="monthFunction(this.id)">Nov</div>
+				<div id="Dec" class="dropdown-content" onclick="monthFunction(this.id)">Dec</div>
+			</div>
+		</div>
+		<ul>
+			<li>11 cherrry</li>
+			<li>17 chocolate</li>
+			<li>31 plain</li>
+		</ul> 
+	</body>
+</html>

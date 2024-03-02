@@ -19,15 +19,44 @@ $(function() {
 });
 
 // function for changing the months
-function monthFunction(clicked_id) {
+function monthFunction(month) {
 	// change the month to whatever the user clicked
-	$("#month").text(clicked_id);
+	$("#month").text(month);
 
 	// Issue a POST request to the server
-	$.post("/orders", function(data, status) {
-		const obj = JSON.parse(data);
-		document.getElementById("list1").innerHTML = obj[0].quantity + " " + obj[0].topping 
-		document.getElementById("list2").innerHTML = obj[1].quantity + " " + obj[1].topping 
-		document.getElementById("list3").innerHTML = obj[2].quantity + " " + obj[2].topping 
+	$.post("/orders", {month}, function(data) {
+		$("#orderList").empty()
+
+		if(Object.keys(data).length == 0) {
+			const blankOrdersText = document.createElement("li")
+			blankOrdersText.innerHTML = "No orders :("
+			$("#orderList").append(blankOrdersText)
+			return
+		}
+
+		// update the list of orders
+		Object.keys(data).forEach(topping => {
+			const listItem = document.createElement("li")
+			listItem.innerHTML = data[topping] + " " + topping
+			$("#orderList").append(listItem)
+		})
+	});
+
+	$.post("./neworder", {quantity: quantity, toppings: toppings, notes: notes}, function(data, status) {
+		$("#orderList").empty()
+
+		if(Object.keys(data).length == 0) {
+			const blankOrdersText = document.createElement("li")
+			blankOrdersText.innerHTML = "No orders"
+			$("#orderList").append(blankOrdersText)
+			return
+		}
+
+		// update the list of orders
+		Object.keys(data).forEach(topping => {
+			const listItem = document.createElement("li")
+			listItem.innerHTML = data[topping] + " " + topping
+			$("#orderList").append(listItem)
+		})
 	});
 }

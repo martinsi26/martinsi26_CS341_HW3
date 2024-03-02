@@ -3,16 +3,14 @@ var express = require('express');
 var router = express.Router();
 const { dbquery } = require('./dbms.js')
 
-// json data
-/*let jsObject = [
-    {topping: "cherry", quantity: "2"},
-    {topping: "plain", quantity: "6"},
-    {topping: "chocolate", quantity: "3"}
-]*/
+var x = 0
 
 router.post('/', function(req, res, next) {
-    const month = req.body.month
-    const query = "SELECT QUANTITY, TOPPING FROM ORDERS WHERE MONTH='"+month+"'"
+    const quantity = req.body.quantity
+    const toppings = req.body.toppings
+    const notes = req.body.notes
+    x++
+    const query = "INSERT * FROM ORDERS WHERE QUANTITY='"+quantity+"'TOPPING='"+toppings+"'NOTES='"+notes+"'MONTH='FEB' ORDERID='"+x+"'DAY='23rd'"
 
     dbquery(query, (error, results) => {
         if(error) {
